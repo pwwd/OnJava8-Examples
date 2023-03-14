@@ -5,10 +5,10 @@
 // {NewFeature} Since JDK 11
 
 public class ForTypeInference {
-  public static void main(String[] args) {
-    for(var s : Spiciness.values())
-      System.out.println(s);
-  }
+    public static void main(String[] args) {
+        for (var s : Spiciness.values())
+            System.out.println(s);
+    }
 }
 /* Output:
 NOT

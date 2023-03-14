@@ -3,39 +3,44 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Polymorphic factory methods.
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
+
 import patterns.shapes.*;
 
 interface PolymorphicFactory {
-  Shape create();
+    Shape create();
 }
 
 class RandomShapes implements Supplier<Shape> {
-  private final PolymorphicFactory[] factories;
-  private Random rand = new Random(42);
-  RandomShapes(PolymorphicFactory... factories) {
-    this.factories = factories;
-  }
-  @Override public Shape get() {
-    return
-      factories[rand.nextInt(factories.length)]
-      .create();
-  }
+    private final PolymorphicFactory[] factories;
+    private Random rand = new Random(42);
+
+    RandomShapes(PolymorphicFactory... factories) {
+        this.factories = factories;
+    }
+
+    @Override
+    public Shape get() {
+        return
+                factories[rand.nextInt(factories.length)]
+                        .create();
+    }
 }
 
 public class ShapeFactory3 {
-  public static void main(String[] args) {
-    RandomShapes rs = new RandomShapes(    // [1]
-      Circle::new, Square::new, Triangle::new
-    );
-    Stream.generate(rs)
-      .limit(6)
-      .peek(Shape::draw)
-      .peek(Shape::erase)
-      .count();
-  }
+    public static void main(String[] args) {
+        RandomShapes rs = new RandomShapes(    // [1]
+                Circle::new, Square::new, Triangle::new
+        );
+        Stream.generate(rs)
+                .limit(6)
+                .peek(Shape::draw)
+                .peek(Shape::erase)
+                .count();
+    }
 }
 /* Output:
 Triangle[0] draw

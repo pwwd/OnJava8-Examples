@@ -13,6 +13,6 @@ class ExampleOutputVerificationPlugin implements Plugin<Project> {
                 println("execute 'gradlew run' first")
             }
         }
-        
+
     }
 }

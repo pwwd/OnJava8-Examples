@@ -4,16 +4,18 @@
 // Visit http://OnJava8.com for more book information.
 // {java patterns.recycleb.RecycleB}
 package patterns.recycleb;
+
 import patterns.trash.*;
+
 import java.util.*;
 
 public class RecycleB {
-  public static void main(String[] args) {
-    List<Trash> bin = new ArrayList<>();
-    ParseTrash.fillBin("trash", bin);
-    Bins bins = new Bins(bin);
-    bins.show();
-  }
+    public static void main(String[] args) {
+        List<Trash> bin = new ArrayList<>();
+        ParseTrash.fillBin("trash", bin);
+        Bins bins = new Bins(bin);
+        bins.show();
+    }
 }
 /* Output:
 Loading patterns.trash.Cardboard

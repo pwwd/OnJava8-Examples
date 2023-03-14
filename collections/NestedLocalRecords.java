@@ -5,8 +5,11 @@
 // {NewFeature} Since JDK 16
 
 public class NestedLocalRecords {
-  record Nested(String s) {}
-  void method() {
-    record Local(String s) {}
-  }
+    record Nested(String s) {
+    }
+
+    void method() {
+        record Local (String s){
+        }
+    }
 }

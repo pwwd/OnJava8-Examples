@@ -2,12 +2,13 @@
 // (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
+
 import reflection.pets.*;
 
 public class PetCounter2 {
-  public static void main(String[] args) {
-    new PetCounter().count(new PetCreator());
-  }
+    public static void main(String[] args) {
+        new PetCounter().count(new PetCreator());
+    }
 }
 /* Output:
 Rat Manx Cymric Mutt Pug Cymric Pug Manx Cymric Rat

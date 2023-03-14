@@ -21,6 +21,7 @@ class Tags {
     String runFirst = null
     String outputLine = null
     private String block
+
     def Tags(File file) {
         block = file.text
         hasMainMethod = block.contains('main(String[] args)')
@@ -28,12 +29,12 @@ class Tags {
         fileRoot = (firstLine.split("/")[-1] - ".java").trim() // Remove \r if it exists
         mainClass = fileRoot
         javaCmd = extract('java')
-        if(javaCmd) {
+        if (javaCmd) {
             def pieces = javaCmd.split()
             mainClass = pieces[0]
-            if(pieces.size() > 1)
-                for(p in pieces[1..-1])
-                    if(p.startsWith("-"))
+            if (pieces.size() > 1)
+                for (p in pieces[1..-1])
+                    if (p.startsWith("-"))
                         jVMArgs << p
                     else
                         args << p
@@ -52,9 +53,11 @@ class Tags {
         runFirst = extract('RunFirst:')
         outputLine = extractOutputLine()
     }
+
     private def hasTag(String marker) {
         return block.contains("// {" + marker + "}")
     }
+
     def extractOutputLine() {
         def matcher = (block =~ /(?m)^(\/\* Output:.*)$/)
         if (matcher) {
@@ -63,9 +66,10 @@ class Tags {
             return null
         }
     }
+
     private def extract(String marker) {
         // Assume some whitespace is after marker
-        if(!block.contains("// {${marker} "))
+        if (!block.contains("// {${marker} "))
             return null
         def matcher = (block =~ /\/\/ \{${marker}\s+([^}]+)/)
         if (matcher) {
@@ -77,26 +81,28 @@ class Tags {
             System.exit(1)
         }
     }
+
     public boolean hasTags() {
         return willNotCompile ||
-        excludeFromTravisCI ||
-        excludeFromAppveyorCI ||
-        excludeFromCI ||
-        throwsException ||
-        errorOutputExpected ||
-        excludeFromGradle ||
-        newFeature ||
-        ignoreOutput ||
-        javaCmd ||
-        args ||
-        jVMArgs ||
-        javap ||
-        runFirst
+                excludeFromTravisCI ||
+                excludeFromAppveyorCI ||
+                excludeFromCI ||
+                throwsException ||
+                errorOutputExpected ||
+                excludeFromGradle ||
+                newFeature ||
+                ignoreOutput ||
+                javaCmd ||
+                args ||
+                jVMArgs ||
+                javap ||
+                runFirst
     }
+
     public String toString() {
         String result = ""
-        block.eachLine{ ln ->
-            if(ln.startsWith("//") || ln.startsWith("package "))
+        block.eachLine { ln ->
+            if (ln.startsWith("//") || ln.startsWith("package "))
                 result += ln + "\n"
         }
         """
@@ -118,7 +124,7 @@ class Tags {
         javap
         runFirst
         """.split().each { str ->
-            if(this[str])
+            if (this[str])
                 result += str + ": " + this[str] + "\n"
         }
         result

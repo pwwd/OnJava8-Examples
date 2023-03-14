@@ -4,21 +4,24 @@
 // Visit http://OnJava8.com for more book information.
 
 public enum OverrideConstantSpecific {
-  NUT, BOLT,
-  WASHER {
-    @Override void f() {
-      System.out.println("Overridden method");
+    NUT, BOLT,
+    WASHER {
+        @Override
+        void f() {
+            System.out.println("Overridden method");
+        }
+    };
+
+    void f() {
+        System.out.println("default behavior");
     }
-  };
-  void f() {
-    System.out.println("default behavior");
-  }
-  public static void main(String[] args) {
-    for(OverrideConstantSpecific ocs : values()) {
-      System.out.print(ocs + ": ");
-      ocs.f();
+
+    public static void main(String[] args) {
+        for (OverrideConstantSpecific ocs : values()) {
+            System.out.print(ocs + ": ");
+            ocs.f();
+        }
     }
-  }
 }
 /* Output:
 NUT: default behavior

@@ -8,9 +8,9 @@
 // {ThrowsException}
 
 public class Assert1 {
-  public static void main(String[] args) {
-    assert false;
-  }
+    public static void main(String[] args) {
+        assert false;
+    }
 }
 /* Output:
 ___[ Error Output ]___

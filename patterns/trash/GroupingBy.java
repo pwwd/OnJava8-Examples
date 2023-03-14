@@ -4,18 +4,19 @@
 // Visit http://OnJava8.com for more book information.
 // {java patterns.trash.GroupingBy}
 package patterns.trash;
+
 import java.util.*;
 import java.util.stream.*;
 
 public class GroupingBy {
-  public static void main(String[] args) {
-    List<Trash> bin = new ArrayList<>();
-    ParseTrash.fillBin("trash", bin);
-    Map<Class, List<Trash>> m =
-      bin.stream().collect(
-        Collectors.groupingBy(Object::getClass));
-    ClassToListOfTrashMap.show(m);
-  }
+    public static void main(String[] args) {
+        List<Trash> bin = new ArrayList<>();
+        ParseTrash.fillBin("trash", bin);
+        Map<Class, List<Trash>> m =
+                bin.stream().collect(
+                        Collectors.groupingBy(Object::getClass));
+        ClassToListOfTrashMap.show(m);
+    }
 }
 /* Output:
 Loading patterns.trash.Cardboard

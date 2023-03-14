@@ -2,19 +2,20 @@
 // (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
+
 import reflection.pets.*;
 import onjava.*;
 
 public class PetCounter4 {
-  public static void main(String[] args) {
-    TypeCounter counter = new TypeCounter(Pet.class);
-    new PetCreator().stream()
-      .limit(20)
-      .peek(counter::count)
-      .forEach(p -> System.out.print(
-        p.getClass().getSimpleName() + " "));
-    System.out.println("\n" + counter);
-  }
+    public static void main(String[] args) {
+        TypeCounter counter = new TypeCounter(Pet.class);
+        new PetCreator().stream()
+                .limit(20)
+                .peek(counter::count)
+                .forEach(p -> System.out.print(
+                        p.getClass().getSimpleName() + " "));
+        System.out.println("\n" + counter);
+    }
 }
 /* Output:
 Rat Manx Cymric Mutt Pug Cymric Pug Manx Cymric Rat

@@ -5,18 +5,19 @@
 // {NewFeature} Since JDK 16
 
 public class OddScoping {
-  static void f(Object o) {
-    if(!(o instanceof String s)) {
-      System.out.println("Not a String");
-      throw new RuntimeException();
+    static void f(Object o) {
+        if (!(o instanceof String s)) {
+            System.out.println("Not a String");
+            throw new RuntimeException();
+        }
+        // s is in scope here!
+        System.out.println(s.toUpperCase());  // [1]
     }
-    // s is in scope here!
-    System.out.println(s.toUpperCase());  // [1]
-  }
-  public static void main(String[] args) {
-    f("Curiouser and Curiouser");
-    f(null);
-  }
+
+    public static void main(String[] args) {
+        f("Curiouser and Curiouser");
+        f(null);
+    }
 }
 /* Output:
 CURIOUSER AND CURIOUSER

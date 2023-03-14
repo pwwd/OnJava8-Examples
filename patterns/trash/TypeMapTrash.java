@@ -7,26 +7,31 @@
 // the use of reflection.
 // {java patterns.trash.TypeMapTrash}
 package patterns.trash;
+
 import patterns.TypeMap;
 
 // Adapter class for ParseTrash.fillBin():
 class TypeMapAdapter implements Fillable {
-  private TypeMap<Trash> map;
-  TypeMapAdapter(TypeMap<Trash> map) {
-    this.map = map;
-  }
-  @Override
-  public void addTrash(Trash t) { map.add(t); }
+    private TypeMap<Trash> map;
+
+    TypeMapAdapter(TypeMap<Trash> map) {
+        this.map = map;
+    }
+
+    @Override
+    public void addTrash(Trash t) {
+        map.add(t);
+    }
 }
 
 public class TypeMapTrash {
-  @SuppressWarnings("unchecked")
-  public static void main(String[] args) {
-    TypeMap<Trash> bin = new TypeMap<>();
-    ParseTrash.fillBin(
-      "trash", new TypeMapAdapter(bin));
-    ClassToListOfTrashMap.show(bin.map);
-  }
+    @SuppressWarnings("unchecked")
+    public static void main(String[] args) {
+        TypeMap<Trash> bin = new TypeMap<>();
+        ParseTrash.fillBin(
+                "trash", new TypeMapAdapter(bin));
+        ClassToListOfTrashMap.show(bin.map);
+    }
 }
 /* Output:
 Loading patterns.trash.Cardboard

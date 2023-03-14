@@ -6,8 +6,9 @@
 // method into the trash hierarchy without
 // modifying the original hierarchy.
 package patterns.doubledispatch;
+
 import java.util.*;
 
 public interface TypedBinMember {
-  boolean addToBin(List<TypedBin> bins);
+    boolean addToBin(List<TypedBin> bins);
 }

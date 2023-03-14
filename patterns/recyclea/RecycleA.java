@@ -5,35 +5,38 @@
 // Recycling with reflection.
 // {java patterns.recyclea.RecycleA}
 package patterns.recyclea;
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
+
 import patterns.trash.*;
 
 class SimpleFactory {
-  static final
-  List<Function<Double, Trash>> constructors =
-    Arrays.asList(
-      Aluminum::new, Paper::new, Glass::new);
-  static final int SIZE = constructors.size();
-  private static SplittableRandom rand =
-    new SplittableRandom(42);
-  public static Trash random() {
-    return constructors
-      .get(rand.nextInt(SIZE))
-      .apply(rand.nextDouble());
-  }
+    static final
+    List<Function<Double, Trash>> constructors =
+            Arrays.asList(
+                    Aluminum::new, Paper::new, Glass::new);
+    static final int SIZE = constructors.size();
+    private static SplittableRandom rand =
+            new SplittableRandom(42);
+
+    public static Trash random() {
+        return constructors
+                .get(rand.nextInt(SIZE))
+                .apply(rand.nextDouble());
+    }
 }
 
 public class RecycleA {
-  public static void main(String[] args) {
-    List<Trash> bin =
-      Stream.generate(SimpleFactory::random)
-        .limit(10)
-        .collect(Collectors.toList());
-    Bins bins = new Bins(bin);
-    bins.show();
-  }
+    public static void main(String[] args) {
+        List<Trash> bin =
+                Stream.generate(SimpleFactory::random)
+                        .limit(10)
+                        .collect(Collectors.toList());
+        Bins bins = new Bins(bin);
+        bins.show();
+    }
 }
 /* Output:
 Aluminum weight: 0.34 * price: 1.67 = 0.57

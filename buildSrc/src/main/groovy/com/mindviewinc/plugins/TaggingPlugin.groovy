@@ -22,16 +22,16 @@ class TaggingPlugin implements Plugin<Project> {
             if (file.name.endsWith('.java')) {
 
                 Tags tags = new Tags(file)
-                if(debug && tags.hasTags()) println tags
+                if (debug && tags.hasTags()) println tags
 
                 // Exclude java sources that will not compile
                 if (tags.willNotCompile
-                    || tags.newFeature // Uses a feature introduced after Java 8
-                    || (tags.lowLevelAppendix && runningInAppveyor) // Exclude entire lowlevel appendix
-                    || (tags.excludeFromAppveyorCI && runningInAppveyor)
-                    || (tags.excludeFromTravisCI && runningInTravis)
-                    || (tags.excludeFromCI && runningInCI)
-                    ) {
+                        || tags.newFeature // Uses a feature introduced after Java 8
+                        || (tags.lowLevelAppendix && runningInAppveyor) // Exclude entire lowlevel appendix
+                        || (tags.excludeFromAppveyorCI && runningInAppveyor)
+                        || (tags.excludeFromTravisCI && runningInTravis)
+                        || (tags.excludeFromCI && runningInCI)
+                ) {
                     project.sourceSets.main.java.excludes.add(file.name)
                 } else {
                     JavaExec javaTask = null
@@ -61,21 +61,21 @@ class TaggingPlugin implements Plugin<Project> {
                         javaTask.configure {
                             ignoreExitValue = tags.excludeFromGradle || tags.throwsException
                             doFirst {
-                                if(outFile.exists())
+                                if (outFile.exists())
                                     outFile.delete()
-                                if(tags.outputLine)
+                                if (tags.outputLine)
                                     outFile << tags.outputLine + "\n"
 
                                 standardOutput = new TeeOutputStream(new FileOutputStream(outFile, true), System.out)
                                 errorOutput = new TeeOutputStream(new FileOutputStream(errFile), System.err)
                             }
                             doLast {
-                                if(outFile.size() == 0)
+                                if (outFile.size() == 0)
                                     outFile.delete()
-                                else if(!outFile.text.contains("/* Output:"))
+                                else if (!outFile.text.contains("/* Output:"))
                                     outFile.delete()
-                                if(errFile.size() == 0) errFile.delete()
-                           }
+                                if (errFile.size() == 0) errFile.delete()
+                            }
                         }
 
                         if (!tags.excludeFromGradle) {

@@ -2,18 +2,19 @@
 // (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
+
 import java.util.concurrent.*;
 import java.util.stream.*;
 
 public class CachedThreadPool2 {
-  public static void main(String[] args) {
-    ExecutorService exec =
-      Executors.newCachedThreadPool();
-    IntStream.range(0, 10)
-      .mapToObj(InterferingTask::new)
-      .forEach(exec::execute);
-    exec.shutdown();
-  }
+    public static void main(String[] args) {
+        ExecutorService exec =
+                Executors.newCachedThreadPool();
+        IntStream.range(0, 10)
+                .mapToObj(InterferingTask::new)
+                .forEach(exec::execute);
+        exec.shutdown();
+    }
 }
 /* Output:
 3 pool-1-thread-4 100

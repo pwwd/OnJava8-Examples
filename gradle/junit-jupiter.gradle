@@ -43,7 +43,7 @@ junitPlatform {
 */
 tasks.findByPath(":$name:test").configure {
     File testDir = file("tests")
-    if(testDir.exists()) {
+    if (testDir.exists()) {
         File outFile = new File(testDir, 'report.txt')
 
         Writer taskOutput
@@ -63,9 +63,9 @@ tasks.findByPath(":$name:test").configure {
             // The memory cache version doesn't have this problem.
             taskOutput.close()
 
-            if(outFile.size() == 0)
+            if (outFile.size() == 0)
                 outFile.delete()
-            else if(outFile.text.contains("0 tests found"))
+            else if (outFile.text.contains("0 tests found"))
                 outFile.delete()
         }
     }

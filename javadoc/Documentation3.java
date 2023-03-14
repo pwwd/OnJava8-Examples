@@ -3,7 +3,8 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
-/** You can <em>even</em> insert a list:
+/**
+ * You can <em>even</em> insert a list:
  * <ol>
  * <li> Item one
  * <li> Item two
@@ -11,4 +12,5 @@
  * </ol>
  */
 
-public class Documentation3 {}
+public class Documentation3 {
+}

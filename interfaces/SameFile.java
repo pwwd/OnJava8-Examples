@@ -4,6 +4,13 @@
 // Visit http://OnJava8.com for more book information.
 // {NewFeature} Since JDK 17
 
-sealed class Shape {}
-final class Circle extends Shape {}
-final class Triangle extends Shape {}
+sealed
+
+class Shape {
+}
+
+final class Circle extends Shape {
+}
+
+final class Triangle extends Shape {
+}

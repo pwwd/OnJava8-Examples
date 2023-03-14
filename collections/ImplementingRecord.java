@@ -5,10 +5,11 @@
 // {NewFeature} Since JDK 16
 
 interface Star {
-  double brightness();
-  double density();
+    double brightness();
+
+    double density();
 }
 
-record RedDwarf(double brightness) implements Star {
-  @Override public double density() { return 100.0; }
-}
+    record RedDwarf(double brightness) implements Star{
+@Override public double density(){return 100.0;}
+        }

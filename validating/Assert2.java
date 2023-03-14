@@ -7,10 +7,10 @@
 // {ThrowsException}
 
 public class Assert2 {
-  public static void main(String[] args) {
-    assert false:
-      "Here's a message saying what happened";
-  }
+    public static void main(String[] args) {
+        assert false :
+                "Here's a message saying what happened";
+    }
 }
 /* Output:
 ___[ Error Output ]___

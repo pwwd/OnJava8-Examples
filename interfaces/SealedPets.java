@@ -3,4 +3,7 @@
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // {NewFeature} Since JDK 17
-sealed class Pet permits Dog, Cat {}
+sealed
+
+class Pet permits Dog, Cat {
+}

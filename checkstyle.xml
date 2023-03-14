@@ -79,11 +79,11 @@
 
         <!-- Checks for Javadoc comments.                     -->
         <!-- See http://checkstyle.sf.net/config_javadoc.html -->
-<!--         <module name="JavadocMethod"/>
-        <module name="JavadocType"/>
-        <module name="JavadocVariable"/>
-        <module name="JavadocStyle"/>
- -->
+        <!--         <module name="JavadocMethod"/>
+                <module name="JavadocType"/>
+                <module name="JavadocVariable"/>
+                <module name="JavadocStyle"/>
+         -->
 
         <!-- Checks for Naming Conventions.                  -->
         <!-- See http://checkstyle.sf.net/config_naming.html -->
@@ -100,7 +100,7 @@
 
         <!-- Checks for imports                              -->
         <!-- See http://checkstyle.sf.net/config_import.html -->
-<!--         <module name="AvoidStarImport"/> -->
+        <!--         <module name="AvoidStarImport"/> -->
         <module name="IllegalImport"/>
         <!-- defaults to sun.* packages -->
         <module name="RedundantImport"/>
@@ -116,17 +116,17 @@
 
         <!-- Checks for whitespace                               -->
         <!-- See http://checkstyle.sf.net/config_whitespace.html -->
-<!--         <module name="EmptyForIteratorPad"/>
-        <module name="GenericWhitespace"/>
-        <module name="MethodParamPad"/>
-        <module name="NoWhitespaceAfter"/>
-        <module name="NoWhitespaceBefore"/>
-        <module name="OperatorWrap"/>
-        <module name="ParenPad"/>
-        <module name="TypecastParenPad"/>
-        <module name="WhitespaceAfter"/>
-        <module name="WhitespaceAround"/>
- -->
+        <!--         <module name="EmptyForIteratorPad"/>
+                <module name="GenericWhitespace"/>
+                <module name="MethodParamPad"/>
+                <module name="NoWhitespaceAfter"/>
+                <module name="NoWhitespaceBefore"/>
+                <module name="OperatorWrap"/>
+                <module name="ParenPad"/>
+                <module name="TypecastParenPad"/>
+                <module name="WhitespaceAfter"/>
+                <module name="WhitespaceAround"/>
+         -->
 
         <!-- Modifier Checks                                    -->
         <!-- See http://checkstyle.sf.net/config_modifiers.html -->
@@ -136,11 +136,11 @@
 
         <!-- Checks for blocks. You know, those {}'s         -->
         <!-- See http://checkstyle.sf.net/config_blocks.html -->
-<!--         <module name="AvoidNestedBlocks"/>
-        <module name="EmptyBlock"/>
-        <module name="LeftCurly"/>
-        <module name="NeedBraces"/>
-        <module name="RightCurly"/> -->
+        <!--         <module name="AvoidNestedBlocks"/>
+                <module name="EmptyBlock"/>
+                <module name="LeftCurly"/>
+                <module name="NeedBraces"/>
+                <module name="RightCurly"/> -->
 
 
         <!-- Checks for common coding problems               -->
@@ -150,11 +150,11 @@
         <module name="EqualsHashCode"/>
         <!-- <module name="HiddenField"/> -->
         <module name="IllegalInstantiation"/>
-<!--         <module name="InnerAssignment"/> -->
-<!--         <module name="MagicNumber"/> -->
+        <!--         <module name="InnerAssignment"/> -->
+        <!--         <module name="MagicNumber"/> -->
         <module name="MissingSwitchDefault"/>
         <!-- Checkstyle stopped working on the following for some reason: -->
-<!--         <module name="RedundantThrows"/> -->
+        <!--         <module name="RedundantThrows"/> -->
         <!-- <module name="SimplifyBooleanExpression"/> -->
         <module name="SimplifyBooleanReturn"/>
 

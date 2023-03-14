@@ -4,15 +4,20 @@
 // Visit http://OnJava8.com for more book information.
 // Glass with double dispatching.
 package patterns.doubledispatch;
+
 import patterns.trash.*;
+
 import java.util.*;
 
 public class Glass extends patterns.trash.Glass
-implements TypedBinMember {
-  public Glass(double wt) { super(wt); }
-  @Override
-  public boolean addToBin(List<TypedBin> tbins) {
-    return tbins.stream()
-      .anyMatch(tb -> tb.add(this));
-  }
+        implements TypedBinMember {
+    public Glass(double wt) {
+        super(wt);
+    }
+
+    @Override
+    public boolean addToBin(List<TypedBin> tbins) {
+        return tbins.stream()
+                .anyMatch(tb -> tb.add(this));
+    }
 }

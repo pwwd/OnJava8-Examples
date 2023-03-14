@@ -4,13 +4,14 @@
 // Visit http://OnJava8.com for more book information.
 
 public class Replacing {
-  static String s = Splitting.knights;
-  public static void main(String[] args) {
-    System.out.println(
-      s.replaceFirst("f\\w+", "located"));
-    System.out.println(
-      s.replaceAll("shrubbery|tree|herring","banana"));
-  }
+    static String s = Splitting.knights;
+
+    public static void main(String[] args) {
+        System.out.println(
+                s.replaceFirst("f\\w+", "located"));
+        System.out.println(
+                s.replaceAll("shrubbery|tree|herring", "banana"));
+    }
 }
 /* Output:
 Then, when you have located the shrubbery, you must cut

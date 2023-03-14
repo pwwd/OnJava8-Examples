@@ -5,12 +5,18 @@
 package patterns.trash;
 
 public class Cardboard extends Trash {
-  public Cardboard(double wt) { super(wt); }
-  @Override public double price() {
-    return Price.CARDBOARD;
-  }
-  // Ignore for now; to be used later:
-  @Override public void accept(Visitor v) {
-    v.visit(this);
-  }
+    public Cardboard(double wt) {
+        super(wt);
+    }
+
+    @Override
+    public double price() {
+        return Price.CARDBOARD;
+    }
+
+    // Ignore for now; to be used later:
+    @Override
+    public void accept(Visitor v) {
+        v.visit(this);
+    }
 }

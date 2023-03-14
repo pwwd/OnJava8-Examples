@@ -6,26 +6,26 @@ If you want to experiment with the code examples from the book [On Java
 These examples are automatically extracted directly from the book. This repository
 includes tests to verify that the code in the book is correct.
 
-> NOTE: Do not attempt to use JDK 16 or greater with gradle. 
+> NOTE: Do not attempt to use JDK 16 or greater with gradle.
 > This produces a `BUG!` message from Gradle, which is broken for those versions.
 
 ## Contents
 
 - [Building From the Command Line: Quick Version](#building-from-the-command-line-quick-version)
 - [Building From the Command Line: Detailed Instructions](#building-from-the-command-line-detailed-instructions)
-  * [Install Java](#install-java)
-    + [Windows](#windows)
-    + [Macintosh](#macintosh)
-    + [Linux](#linux)
-  * [Verify Your Installation](#verify-your-installation)
-  * [Installing and Running the Book Examples](#installing-and-running-the-book-examples)
+    * [Install Java](#install-java)
+        + [Windows](#windows)
+        + [Macintosh](#macintosh)
+        + [Linux](#linux)
+    * [Verify Your Installation](#verify-your-installation)
+    * [Installing and Running the Book Examples](#installing-and-running-the-book-examples)
 - [Appendix A: Command-Line Basics](#appendix-a-command-line-basics)
-  * [Editors](#editors)
-  * [The Shell](#the-shell)
-    + [Starting a Shell](#starting-a-shell)
-    + [Directories](#directories)
-    + [Basic Shell Operations](#basic-shell-operations)
-    + [Unpacking a Zip Archive](#unpacking-a-zip-archive)
+    * [Editors](#editors)
+    * [The Shell](#the-shell)
+        + [Starting a Shell](#starting-a-shell)
+        + [Directories](#directories)
+        + [Basic Shell Operations](#basic-shell-operations)
+        + [Unpacking a Zip Archive](#unpacking-a-zip-archive)
 - [Appendix B: Testing](#appendix-b-testing)
 - [Appendix C: Troubleshooting](#appendix-c-troubleshooting)
 
@@ -79,20 +79,20 @@ You must first install the *Java Development Kit* (JDK).
 
 1. Follow the instructions to [install Chocolatey](https://chocolatey.org/).
 
-2. At a [shell prompt](#appendix-a-command-line-basics), type: `choco install
-jdk8` (you may also select a more recent version, like `jdk11`). The
-installation process takes some time, but when it's finished Java is installed
-and the necessary environment variables are set.
+2. At a [shell prompt](#appendix-a-command-line-basics), type:`choco install
+   jdk8` (you may also select a more recent version, like `jdk11`). The
+   installation process takes some time, but when it's finished Java is installed
+   and the necessary environment variables are set.
 
 ### Macintosh
 
 The Mac comes with a much older version of Java that won't work for the
 examples in this book, so you'll need to update it to (at least) Java 8.
 
-  1.  Follow the instructions at this link to [Install HomeBrew](http://brew.sh/)
+1. Follow the instructions at this link to [Install HomeBrew](http://brew.sh/)
 
-  2.  At a [shell prompt](#appendix-a-command-line-basics), first type
-      `brew update`. When that completes, enter `brew cask install java`.
+2. At a [shell prompt](#appendix-a-command-line-basics), first type
+   `brew update`. When that completes, enter `brew cask install java`.
 
 **NOTE:** Sometimes the default version of Java that you get with the above
 installation will be too recent and not validated by the Mac's security
@@ -107,9 +107,9 @@ Use the standard package installer with the following [shell commands](#appendix
 
 *Ubuntu/Debian*:
 
-  1. `sudo apt-get update`
+1. `sudo apt-get update`
 
-  2. `sudo apt-get install default-jdk`
+2. `sudo apt-get install default-jdk`
 
 *Fedora/Redhat*:
 
@@ -144,20 +144,20 @@ Once you have Java installed, the process to install and run the book examples
 is the same for all platforms:
 
 1. Download the book examples from the
-[GitHub Repository](https://github.com/BruceEckel/OnJava8-Examples/archive/refs/heads/master.zip).
+   [GitHub Repository](https://github.com/BruceEckel/OnJava8-Examples/archive/refs/heads/master.zip).
 
 2. [Unzip](#unpacking-a-zip-archive) the downloaded file into the directory of your choice.
 
 3. Use the Windows Explorer, the Mac Finder, or Nautilus or equivalent on Linux
-to browse to the directory where you uzipped `OnJava8-Examples`, and
-[open a shell](#appendix-a-command-line-basics) there.
+   to browse to the directory where you uzipped `OnJava8-Examples`, and
+   [open a shell](#appendix-a-command-line-basics) there.
 
 4. If you're in the right directory, you should see files named `gradlew` and
-`gradlew.bat` in that directory, along with numerous other files and
-directories. The directories correspond to the chapters in the book.
+   `gradlew.bat` in that directory, along with numerous other files and
+   directories. The directories correspond to the chapters in the book.
 
 5. At the shell prompt, type `gradlew test` (Windows) or `./gradlew test`
-(Mac/Linux).
+   (Mac/Linux).
 
 The first time you do this, Gradle will install itself and numerous other
 packages, so it will take some time. After everything is installed, subsequent
@@ -217,8 +217,8 @@ shell in your home directory.
 directories:
 
 - *Windows 7*: click the "Start" button in the lower left corner of the screen.
-In the Start Menu search box area type "explorer" and then press the "Enter"
-key.
+  In the Start Menu search box area type "explorer" and then press the "Enter"
+  key.
 
 - *Windows 8*: click Windows+Q, type "explorer" and then press the "Enter" key.
 
@@ -240,7 +240,6 @@ Windows Powershell." This opens a shell in the destination directory.
 
 - *Fedora*: Press Alt+F2. In the dialog that pops up, type 'gnome-terminal'
 
-
 ### Directories
 
 *Directories* are one of the fundamental elements of a shell. Directories hold
@@ -258,40 +257,40 @@ The shell operations shown here are approximately identical across operating
 systems. For the purposes of this book, here are the essential operations in a
 shell:
 
--   **Change directory**: Use `cd` followed by the name of the
-    directory where you want to move, or `cd ..` if you want to move
-    up a directory. If you want to move to a different directory while
-    remembering where you came from, use `pushd` followed by the different
-    directory name. Then, to return to the previous directory, just say
-    `popd`.
+- **Change directory**: Use `cd` followed by the name of the
+  directory where you want to move, or `cd ..` if you want to move
+  up a directory. If you want to move to a different directory while
+  remembering where you came from, use `pushd` followed by the different
+  directory name. Then, to return to the previous directory, just say
+  `popd`.
 
--   **Directory listing**: `ls` (`dir` in Windows) displays all the files and
-    subdirectory names in the current directory. Use the wildcard `*` (asterisk) to
-    narrow your search. For example, if you want to list all the files ending in
-    ".kt," you say `ls *.kt` (Windows: `dir *.kt`). If you want to list the
-    files starting with "F" and ending in ".kt," you say `ls F*.kt` (Windows:
-    `dir F*.kt`).
+- **Directory listing**: `ls` (`dir` in Windows) displays all the files and
+  subdirectory names in the current directory. Use the wildcard `*` (asterisk) to
+  narrow your search. For example, if you want to list all the files ending in
+  ".kt," you say `ls *.kt` (Windows: `dir *.kt`). If you want to list the
+  files starting with "F" and ending in ".kt," you say `ls F*.kt` (Windows:
+  `dir F*.kt`).
 
--   **Create a directory**: use the `mkdir` ("make directory") command
-    (Windows: `md`), followed by the name of the directory you want to create.
-    For example, `mkdir books` (Windows: `md books`).
+- **Create a directory**: use the `mkdir` ("make directory") command
+  (Windows: `md`), followed by the name of the directory you want to create.
+  For example, `mkdir books` (Windows: `md books`).
 
--   **Remove a file**: Use `rm` ("remove") followed by the name of the file
-    you wish to remove (Windows: `del`). For example, `rm somefile.kt` (Windows:
-    `del somefile.kt`).
+- **Remove a file**: Use `rm` ("remove") followed by the name of the file
+  you wish to remove (Windows: `del`). For example, `rm somefile.kt` (Windows:
+  `del somefile.kt`).
 
--   **Remove a directory**: use the `rm -r` command to remove the files in
-    the directory and the directory itself (Windows: `deltree`). For example,
-    `rm -r books` (Windows: `deltree books`).
+- **Remove a directory**: use the `rm -r` command to remove the files in
+  the directory and the directory itself (Windows: `deltree`). For example,
+  `rm -r books` (Windows: `deltree books`).
 
--   **Repeat a command**: The "up arrow" on all three operating
-    systems moves through previous commands so you can edit and
-    repeat them. On Mac/Linux, `!!` repeats the last command and
-    `!n` repeats the nth command.
+- **Repeat a command**: The "up arrow" on all three operating
+  systems moves through previous commands so you can edit and
+  repeat them. On Mac/Linux, `!!` repeats the last command and
+  `!n` repeats the nth command.
 
--   **Command history**: Use `history` in Mac/Linux or press the F7 key in Windows.
-    This gives you a list of all the commands you've entered. Mac/Linux provides
-    numbers to refer to when you want to repeat a command.
+- **Command history**: Use `history` in Mac/Linux or press the F7 key in Windows.
+  This gives you a list of all the commands you've entered. Mac/Linux provides
+  numbers to refer to when you want to repeat a command.
 
 ### Unpacking a Zip Archive
 

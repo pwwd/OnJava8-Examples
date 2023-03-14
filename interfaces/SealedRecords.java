@@ -4,9 +4,13 @@
 // Visit http://OnJava8.com for more book information.
 // {NewFeature} Since JDK 17
 
-sealed interface Employee
-  permits CLevel, Programmer {}
-record CLevel(String type)
-  implements Employee {}
-record Programmer(String experience)
-  implements Employee {}
+sealed
+
+interface Employee
+        permits CLevel, Programmer {
+}
+
+    record CLevel(String type)
+  implements Employee{}
+          record Programmer(String experience)
+          implements Employee{}

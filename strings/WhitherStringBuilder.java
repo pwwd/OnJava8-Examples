@@ -4,18 +4,19 @@
 // Visit http://OnJava8.com for more book information.
 
 public class WhitherStringBuilder {
-  public String implicit(String[] fields) {
-    String result = "";
-    for(String field : fields) {
-      result += field;
+    public String implicit(String[] fields) {
+        String result = "";
+        for (String field : fields) {
+            result += field;
+        }
+        return result;
     }
-    return result;
-  }
-  public String explicit(String[] fields) {
-    StringBuilder result = new StringBuilder();
-    for(String field : fields) {
-      result.append(field);
+
+    public String explicit(String[] fields) {
+        StringBuilder result = new StringBuilder();
+        for (String field : fields) {
+            result.append(field);
+        }
+        return result.toString();
     }
-    return result.toString();
-  }
 }

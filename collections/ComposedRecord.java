@@ -4,7 +4,7 @@
 // Visit http://OnJava8.com for more book information.
 // {NewFeature} Since JDK 16
 
-record Company(Employee[] e) {}
+record Company(Employee[]e){}
 
 // class Conglomerate extends Company {}
 // error: cannot inherit from final Company

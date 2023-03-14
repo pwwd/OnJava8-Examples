@@ -5,16 +5,21 @@
 // {NewFeature} Preview in JDK 17
 // Compile with javac flags:
 //   --enable-preview --source 17
+
 import java.util.*;
 
-sealed interface Base {}
-record Derived() implements Base {}
+sealed
+
+interface Base {
+}
+
+    record Derived() implements Base{}
 
 public class Dominance {
-  static String test(Base base) {
-    return switch(base) {
-      case Derived d -> "Derived";
-      case Base b -> "B";            // [1]
-    };
-  }
+    static String test(Base base) {
+        return switch (base) {
+            case Derived d -> "Derived";
+            case Base b -> "B";            // [1]
+        };
+    }
 }

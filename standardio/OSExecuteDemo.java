@@ -5,9 +5,11 @@
 // Demonstrates standard I/O redirection
 // javap -cp build/classes/java/main OSExecuteDemo
 // {ExcludeFromGradle}
+
 import onjava.*;
 
-public class OSExecuteDemo {}
+public class OSExecuteDemo {
+}
 /* Output:
 Compiled from "OSExecuteDemo.java"
 public class OSExecuteDemo {

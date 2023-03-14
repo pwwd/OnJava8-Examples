@@ -4,13 +4,16 @@
 // Visit http://OnJava8.com for more book information.
 
 public class Pet {
-  void feed() {}
+    void feed() {
+    }
 }
 
 class Dog extends Pet {
-  void walk() {}
+    void walk() {
+    }
 }
 
 class Fish extends Pet {
-  void changeWater() {}
+    void changeWater() {
+    }
 }

@@ -4,18 +4,21 @@
 // Visit http://OnJava8.com for more book information.
 // Generic TypeMap works for any types.
 package patterns;
+
 import java.util.*;
 import java.util.stream.*;
 
 public class TypeMap<T> {
-  public final Map<Class, List<T>> map =
-    new HashMap<>();
-  public void add(T o) {
-    Class type = o.getClass();
-    map.computeIfAbsent(type,
-      k -> new ArrayList<T>()).add(o);
-  }
-  public Stream<List<T>> values() {
-    return map.values().stream();
-  }
+    public final Map<Class, List<T>> map =
+            new HashMap<>();
+
+    public void add(T o) {
+        Class type = o.getClass();
+        map.computeIfAbsent(type,
+                k -> new ArrayList<T>()).add(o);
+    }
+
+    public Stream<List<T>> values() {
+        return map.values().stream();
+    }
 }

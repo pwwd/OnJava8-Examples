@@ -4,13 +4,13 @@
 // Visit http://OnJava8.com for more book information.
 // {NewFeature} Since JDK 16
 
-record Point(int x, int y) {
-  void assertPositive(int val) {
-    if(val < 0)
-      throw new IllegalArgumentException("negative");
-  }
-  Point { // Compact: No parameter list
-    assertPositive(x);
-    assertPositive(y);
-  }
-}
+record Point(int x,int y){
+        void assertPositive(int val){
+        if(val< 0)
+        throw new IllegalArgumentException("negative");
+        }
+        Point{ // Compact: No parameter list
+        assertPositive(x);
+        assertPositive(y);
+        }
+        }

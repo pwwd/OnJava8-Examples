@@ -5,5 +5,5 @@
 package patterns.shapes;
 
 public interface FactoryMethod {
-  Shape create(String type);
+    Shape create(String type);
 }

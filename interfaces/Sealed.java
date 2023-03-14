@@ -4,9 +4,15 @@
 // Visit http://OnJava8.com for more book information.
 // {NewFeature} Since JDK 17
 
-sealed class Base permits D1, D2 {}
+sealed
 
-final class D1 extends Base {}
-final class D2 extends Base {}
+class Base permits D1, D2 {
+}
+
+final class D1 extends Base {
+}
+
+final class D2 extends Base {
+}
 // Illegal:
 // final class D3 extends Base {}

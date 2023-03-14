@@ -5,6 +5,11 @@
 package reflection.pets;
 
 public class Mutt extends Dog {
-  public Mutt(String name) { super(name); }
-  public Mutt() { super(); }
+    public Mutt(String name) {
+        super(name);
+    }
+
+    public Mutt() {
+        super();
+    }
 }
